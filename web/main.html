@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <script src="eel.js"></script>
+    <link rel="icon" type="image/png" href="">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/site.webmanifest">
+</head>
+
+<body>
+    <input id="location" type="text" placeholder="Введите название страны и города.." required="" value="Гомель, Беларусь">
+    <button id="show">Weather</button>
+    <hr>
+    <div id="info"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        async function display_weather() {
+            let place = document.getElementById("location").value;
+            let res = await eel.get_weather(place)();
+            document.getElementById("info").innerHTML = res;
+        }
+
+        jQuery(show).on("click", function () {
+            display_weather();
+        });
+    </script>
+</body>
+
+</html>
