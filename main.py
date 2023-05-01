@@ -1,7 +1,7 @@
 import eel
 import pyowm
 
-owm = pyowm.OWM('5efdfb0edbf028d2c03d79be12f39804')
+owm = pyowm.OWM('')
 
 
 @eel.expose
